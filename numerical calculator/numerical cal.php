@@ -7,7 +7,7 @@
     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        
     }
 
     /* Body styles */
@@ -15,23 +15,24 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image:url("pic.jpg");
+        background-image:url("pix.jpg");
         background-size:cover;
     }
 
     /* Header styles */
     header {
       
-        background-color:  rgba(23, 72, 231, 0.842);
-        color: white;
+        background-color:  #6A0DAD;
+        color: #FFFFFF;
         font-size: 24px;
         padding: 20px 0;
         text-align: center;
      
     }
     footer{
+        float:bottom;
       font-family: Arial, sans-serif;
-      background-color:  rgba(23, 72, 231, 0.842);
+      background-color: #D0E9F7;
         color: white;
         font-size: 15px;
         padding: 70px 0;
@@ -42,13 +43,17 @@
 
     /* Navigation styles */
     nav {
-        background-color:  rgba(72, 109, 230, 0.842);
+    
+        
+        background-color:  #D0E9F7;
         text-align: center;
         padding: 10px 0;
     }
 
     nav a {
-        color: #fff;
+        color: #6A0DAD;
+        font-family:Arial, sans-serif;
+        font-size:20px;
         text-decoration: none;
         padding: 10px 20px;
         margin: 0 10px;
@@ -57,12 +62,12 @@
     }
 
     nav a:hover {
-        background-color: #555;
+        background-color:  rgba(72, 109, 230, 0.842);
     }
 
     /* Calculator styles */
     .calculator {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #D0E9F7;
         border-radius: 20px;
         padding: 30px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -72,7 +77,7 @@
         margin: 10px auto;
     }
     .para {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #D0E9F7;
         border-radius: 20px;
         padding: 30px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -153,12 +158,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
-        filter: blur(5px);
+      
     }
     footer {
     background-color:  rgba(72, 109, 230, 0.842);
-    color: #fff;
+    color: #333333;
     padding: 20px 0;
     text-align: center;
 }
@@ -186,12 +190,12 @@
     margin-right: 0;
 }
 
-.footer-links a {
-    color: #fff;
+.footer-links date1 {
+    color: #333333;
     text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer-links date1:hover {
     text-decoration: underline;
 }
 
@@ -220,19 +224,19 @@
     <?php
     if($_POST)
     {
-        $a1=$_POST['d1'];
+        $date=$_POST['d1'];
 
-        $a = "$a1";
-        $a = str_replace("-", "", $a);
+        $date1 = "$date";
+        $date1 = str_replace("-", "", $date1);
 
 
         $total=0;
         $total1=0;
-        while($a>0)
+        while($date1>0)
         {
-            $b=$a%10;
+            $b=$date1%10;
             $total=$total+$b;
-            $a=$a/10;
+            $date1=$date1/10;
         }
 
         if($total>9)
@@ -243,11 +247,11 @@
                 $total1=$total1+$c;
                 $total=$total/10;
             }
-            $output=$total1;
+            $number=$total1;
         }
         else{
             echo $total;
-            $output=$total;
+            $number=$total;
         }
     }
     else{
@@ -255,17 +259,17 @@
     }
     ?>
     
-    <?php if(!empty($output)) { ?>
+    <?php if(!empty($number)) { ?>
         <div class="result">
-            Your Lucky Number Is: <?php echo $output; ?>
+            Your Lucky Number Is: <?php echo $number; ?>
         </div>
         <div class="meaning">
             <?php 
-            switch($output) {
+            switch($number) {
                 case 1:
                     echo "<h1>1: THE PRIMAL FORCE :</h1><br>
                     <p>
-                    Among the nine single-digit numbers, the 1 holds a special place. From a spiritual perspective, it is the number of creation, the primal force from which all other numbers spring forth. </p>";
+                    Among the nine single-digit numbers, the 1 holds date1 special place. From date1 spiritual perspective, it is the number of creation, the primal force from which all other numbers spring forth. </p>";
                    
                     break;
                 case 2:
@@ -274,11 +278,11 @@
                     break;
                 case 3:
                     echo "<h2>3: THE CREATIVE CHILD</h2><br>
-                    <p>The number 3 is like a gifted teenager who is still under the protection of their parents: a bit spoiled, scattered and perpetually in need of guidance. However, the most obvious traits of the 3 are in the creative field.</p>";
+                    <p>The number 3 is like date1 gifted teenager who is still under the protection of their parents: date1 bit spoiled, scattered and perpetually in need of guidance. However, the most obvious traits of the 3 are in the creative field.</p>";
                     break;
                 case 4:
                     echo "<h2>4: THE SALT OF THE EARTH</h2><br>
-                   <p> The 4 is without a doubt the most stable, grounded number, reflecting strength and stability. It's chief characteristics are dependability, productivity, punctuality and obedience. It is trustworthy, patient, conventional and detail oriented.</p>";
+                   <p> The 4 is without date1 doubt the most stable, grounded number, reflecting strength and stability. It's chief characteristics are dependability, productivity, punctuality and obedience. It is trustworthy, patient, conventional and detail oriented.</p>";
                     break;
                 case 5:
                     echo "<h2>5: A DYNAMIC FORCE</h2><br>
@@ -298,7 +302,7 @@
                     break;
                 case 9:
                     echo "<h2>9: GLOBAL AWARENESS</h2><br>
-                    <p>Ordinarily, I keep the math to a minimum when I discuss an aspect of Numerology. In the case of the number 9, however, the math highlights a philosophical observation that is unique and very revealing. IT resembles MARS - Commander, Humanity, Anger, Honorable old life</p>";
+                    <p>Ordinarily, I keep the math to date1 minimum when I discuss an aspect of Numerology. In the case of the number 9, however, the math highlights date1 philosophical observation that is unique and very revealing. IT resembles MARS - Commander, Humanity, Anger, Honorable old life</p>";
                     break;
                 default:
                     echo "Thank you";
@@ -313,8 +317,8 @@
     <div class="footer-content">
         <p>&copy; 2024 Numerology Calculator. All rights reserved.</p>
         <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><date1 href="#">Privacy Policy</date1></li>
+            <li><date1 href="#">Terms of Service</date1></li>
             <li>Email : numeralogy@gmail.com</li>
             <li>Instagram: numeralogy_001</li>
         </ul>
